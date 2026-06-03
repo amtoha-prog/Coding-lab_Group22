@@ -28,6 +28,7 @@ secure_data() {
 		return 1
 	fi
 
+	chown  "$(whoami)" "$ACTIVE_DIR" 2>/dev/null
 	chmod 700 "$ACTIVE_DIR"
 
 	if ls "$ACTIVE_DIR"/*.log >/dev/null/ 2>&1; then
