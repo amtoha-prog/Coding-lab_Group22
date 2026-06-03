@@ -41,7 +41,7 @@ TIMESTAMP=$(date +"%Y%m%d_%H%M")
 }
 
 if [ ! -d "active_logs" ] || [ ! -d "archived_logs" ]; then
-    echo "[ERROR] Required directories missing. Run hospital_admin.sh first."
+    echo "[ERROR] Required directories missing. Run hospital_admin.sh to set up directories."
     exit 1
 fi
 
