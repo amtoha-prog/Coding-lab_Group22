@@ -20,3 +20,16 @@ initialize_system() {
 		fi
 	done 
 }
+
+secure_data() {
+	echo "Securing $ACTIVE_DIR"
+	if [ ! -d "$ACTIVE_DIR" ]; then
+		echo "Error: $ACTIVE_DIR does not exist. Run initialize_system first"
+		return 1
+	fi
+
+	chmod 700 "$ACTIVE_DIR"
+
+	echo "Permissions updated. Current state:"
+	ls -ld "$ACTIVE_DIR"
+}
