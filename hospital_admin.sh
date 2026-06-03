@@ -37,5 +37,5 @@ secure_data() {
 
 	echo "Permissions updated. Current state:"
 	ls -ld "$ACTIVE_DIR"
-	ls il "$ACTIVE_DIR"
+	ls -l "$ACTIVE_DIR"
 }
