@@ -24,7 +24,7 @@ TIMESTAMP=$(date +"%Y%m%d_%H%M")
         DEST="archived_logs/${BASENAME}_${TIMESTAMP}.log"
 
         if [ -f "$SOURCE" ]; then
-            mv "$SOURCE" "$DEST"
+            mv "$DEST" # fresh move, no append
             echo "[ARCHIVED]  $SOURCE  -->  $DEST"
         else
             echo "[WARNING]   $SOURCE not found — skipping."
