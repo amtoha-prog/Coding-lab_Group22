@@ -30,6 +30,11 @@ secure_data() {
 
 	chmod 700 "$ACTIVE_DIR"
 
+	if ls "$ACTIVE_DIR"/*.log >/dev/null/ 2>&1; then
+		chmod 600 "$ACTIVE_DIR"/*.log
+	fi
+
 	echo "Permissions updated. Current state:"
 	ls -ld "$ACTIVE_DIR"
+	ls il "$ACTIVE_DIR"
 }
