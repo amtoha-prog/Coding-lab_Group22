@@ -1,6 +1,6 @@
 # Coding-lab_Group22 — KNH Digital Infrastructure Project
 
-# Aout this project
+# About this project
  
 The Kenyatta National Hospital has sensors that measure heart rate,
 temperature, and water usage every second and save the data into
