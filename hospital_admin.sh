@@ -20,3 +20,5 @@ initialize_system() {
 		fi
 	done 
 }
+
+initialize_system
