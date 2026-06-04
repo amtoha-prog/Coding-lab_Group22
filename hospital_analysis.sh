@@ -8,8 +8,6 @@ process_vitals(){
 
 }
 
-process_vitals
-
 #process_vitals function end
 
 water_audit() {
