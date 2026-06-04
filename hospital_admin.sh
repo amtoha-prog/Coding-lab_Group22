@@ -39,3 +39,13 @@ secure_data() {
 	ls -ld "$ACTIVE_DIR"
 	ls -l "$ACTIVE_DIR"
 }
+main() {
+     initialize_system
+     secure_data
+     echo "--------------------------------------------"
+     echo "System Environment Secured"
+     echo "$(date)"
+     echo "--------------------------------------------"
+}
+
+main
