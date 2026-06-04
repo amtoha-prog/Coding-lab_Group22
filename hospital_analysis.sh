@@ -38,4 +38,11 @@ water_audit() {
                printf " No ICU_WATER_RESERVE data found.\n"
            }     
       }
-    ' "$WATER_LOG"
+    ' "$WATER_LOG"'
+
+main() { 
+    process_vitals
+    water_audit
+}
+
+main
