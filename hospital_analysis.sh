@@ -21,7 +21,7 @@ water_audit() {
 
 	awk '
             BEGIN { FS="|" }
-	    $2 == "ICU_WATER_RESERVE" {
+	    $2 ~ /ICU_WATER_RESERVE/ {
 	    total += $3
 	    readings++
 	    if ($3 > peak) peak = $3
