@@ -42,6 +42,7 @@ secure_data() {
 main() {
      initialize_system
      secure_data
+     echo "calling for the sytem initialization and securing the data"
      echo "--------------------------------------------"
      echo "System Environment Secured"
      echo "$(date)"
