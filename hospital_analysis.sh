@@ -3,8 +3,8 @@
 #process_vitals function start
 
 process_vitals(){
-  grep "CRITICAL" heart_rate_log.log | awk -F'[|]' '{print $1, $2, $3}' >> ../reports/critical_alerts.txt
-  grep "CRITICAL" temperature_log.log | awk -F'[|]' '{print $1, $2, $3}' >> ../reports/critical_alerts.txt
+  grep "CRITICAL" active_logs/heart_rate_log.log | awk -F'[|]' '{print $1, $2, $3}' >> reports/critical_alerts.txt
+  grep "CRITICAL" active_logs/temperature_log.log | awk -F'[|]' '{print $1, $2, $3}' >> reports/critical_alerts.txt
 
 }
 
@@ -22,27 +22,23 @@ water_audit() {
 	
 
 	awk '
-            BEGIN { FS=" [|] " }
+            BEGIN { FS="|" }
 	    $2 == "ICU_WATER_RESERVE" {
 	    total += $3
 	    readings++
 	    if ($3 > peak) peak = $3
            }
        END {
-           printf "Usage Summary"
+           printf "Usage Summary\n"
            if (readings > 0) {
 	      printf " Readings analysed : %d\n", readings
-	      printf " Average usage     : %.2f Litres/min\n", total / reading    
+	      printf " Average usage     : %.2f Litres/min\n", total / readings    
 	      printf " Peak usage        : %d Litres/min\n", peak
-           } else{
+           } else {
                printf " No ICU_WATER_RESERVE data found.\n"
            }     
       }
-    ' "$WATER_LOG"'
-
-main() { 
-    process_vitals
-    water_audit
+    ' "$WATER_LOG"
 }
 
-main
+water_audit
