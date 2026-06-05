@@ -1,9 +1,9 @@
 #!/bin/bash
 
 rotate_logs() {
-    TIMESTAMP=$(date +"%Y%m%d_%H%M")
+    TIMESTAMP=$(date +"")
     echo "KNH Log Rotation — $(date)"
-    LOG_FILES=("heart_rate.log" "temperature.log" "water_usage.log")
+    LOG_FILES=("heart_rate_log.log" "temperature_log.log" "water_usage_log.log")
     for LOG in "${LOG_FILES[@]}"; do
         SOURCE="active_logs/${LOG}"
         BASENAME="${LOG%.log}"
